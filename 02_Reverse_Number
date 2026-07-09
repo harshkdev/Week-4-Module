@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    long long num;
+    long long rev = 0;
+    int lastDigit;
+
+    scanf("%lld", &num);
+
+    while (num > 0) {
+        lastDigit = num % 10;
+        rev = rev * 10 + lastDigit;
+        num = num / 10;
+    }
+
+    printf("%lld", rev);
+
+    return 0;
+}
