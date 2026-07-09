@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+
+    // Enter the number
+    long long num;
+
+    // Variables to count even and odd digits
+    int even = 0, odd = 0;
+
+    scanf("%lld", &num);
+
+    // Check if the number is negative
+    if (num < 0) {
+        printf("Negative number...");
+    } else {
+
+        // Count even and odd digits
+        while (num > 0) {
+
+            int digit = num % 10;
+
+            if (digit % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+
+            num = num / 10;
+        }
+
+        // Print even count followed by odd count
+        printf("%d %d", even, odd);
+    }
+
+    return 0;
+}
