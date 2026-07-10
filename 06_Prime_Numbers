@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int l, r;
+    int count = 0;
+
+    // Take input
+    scanf("%d %d", &l, &r);
+
+    //Check every number in the range.
+    for (int i = l; i <= r; i++) {
+
+        if (i < 2) {
+            continue;
+        }
+
+        int prime = 1;
+
+        // Check if i is prime
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                prime = 0;
+                break;
+            }
+        }
+
+        if (prime == 1) {
+            count++;
+        }
+    }
+
+    // Print the total number of prime numbers
+    printf("%d", count);
+
+    return 0;
+}
